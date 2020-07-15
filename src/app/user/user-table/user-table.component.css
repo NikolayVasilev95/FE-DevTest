@@ -1,0 +1,586 @@
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 211px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+}
+header .headerTitle {
+  position: fixed;
+  top: 96px;
+  left: 276px;
+  width: 232px;
+  height: 48px;
+  text-align: left;
+}
+header .headerTitle h1 {
+  font: Semibold 36px/48px Segoe UI;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+header .headerSearch {
+  position: fixed;
+  top: 106px;
+  left: 1469px;
+  width: 179px;
+  height: 27px;
+  background: transparent url('/assets/img/Type to filter the table.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+header .headerSearch input {
+  position: fixed;
+  top: 139px;
+  left: 1466px;
+  width: 357px;
+  height: 0px;
+  border: 2px solid #707070;
+  opacity: 1;
+}
+header .headerSearch .magnifyingGlass {
+  position: fixed;
+  top: 112px;
+  left: 1798px;
+  width: 24px;
+  height: 24px;
+  background: transparent url('/assets/img/search-24px (2).svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.addUser {
+  position: fixed;
+  top: 175px;
+  left: 159px;
+  width: 72px;
+  height: 72px;
+  background: #305ECA 0% 0% no-repeat padding-box;
+  opacity: 1;
+  border-radius: 50%;
+}
+.addUserBtn {
+  position: fixed;
+  top: 173px;
+  left: 180px;
+  width: 31px;
+  height: 64px;
+  text-align: right;
+  font-family: Segoe UI, Light;
+  font-size: 48px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+.addUserPopup {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 1080px;
+  background: #0000008F 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 1;
+  z-index: 1000;
+}
+.addUserPopupTitle {
+  position: fixed;
+  top: 280px;
+  left: 760px;
+  height: 48px;
+  text-align: left;
+  font-family: Segoe UI, Semibold;
+  font-size: 36px;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.closeAddUserPopup {
+  position: fixed;
+  top: 232px;
+  left: 1239px;
+  width: 24px;
+  height: 24px;
+  background: transparent url('/assets/img/close-24px (5).svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.addUserPopupForm {
+  position: fixed;
+  top: 208px;
+  left: 637px;
+  width: 646px;
+  height: 570px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 30px #00000029;
+  opacity: 1;
+}
+.addUserPopupForm form {
+  width: 100%;
+  height: 100%;
+}
+.addUserPopupForm form input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #C6C6C6;
+  border-radius: 0;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-align: left;
+  font-family: Segoe UI, Light;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.addUserPopupForm form label {
+  font-size: 16px;
+  font-family: Segoe UI, Regular;
+  letter-spacing: 0px;
+  color: #C6C6C6;
+  opacity: 1;
+}
+select {
+  width: 220px;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #C6C6C6;
+  border-radius: 0;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-family: Segoe UI, Regular;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #C6C6C6;
+  opacity: 1;
+}
+.addUserPopupForm form .userName {
+  position: fixed;
+  top: 388px;
+  left: 709px;
+  width: 491px;
+  height: 49px;
+  opacity: 1;
+  display: grid;
+  grid-template-columns: 10% 45% 45%;
+}
+.addUserPopupForm form .userName .userAvatarRow {
+  width: 24px;
+  height: 24px;
+  background: transparent url('/assets/img/face-24px (1).svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.addUserPopupForm form .userName .userFirstNameRow {
+
+}
+.addUserPopupForm form .userName .userLastNameRow {
+
+}
+.addUserPopupForm form .userEmail {
+  position: fixed;
+  top: 499px;
+  left: 710px;
+  width: 490px;
+  height: 27px;
+  opacity: 1;
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
+.addUserPopupForm form .userEmail .userEmailIconRow {
+  width: 24px;
+  height: 24px;
+  background: transparent url('/assets/img/alternate_email-24px.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.addUserPopupForm form .userEmail .userEmailRow {
+  width: 100%;
+}
+.addUserPopupForm form .userEmail .userEmailRow input {
+  width: 100%;
+}
+.addUserPopupForm form .userRole {
+  position: fixed;
+  top: 584px;
+  left: 714px;
+  width: 267px;
+  height: 34px;
+  opacity: 1;
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
+.addUserPopupForm form .userRole .userRoleIconRow {
+  width: 24px;
+  height: 24px;
+  background: transparent url('/assets/img/vpn_key-24px (1).svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.addUserPopupForm form .addUserPopupFormBtn {
+  position: fixed;
+  top: 657px;
+  left: 760px;
+  width: 142px;
+  height: 41px;
+  background: transparent url('/assets/img/Group 6.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+  border: none;
+  font-family: Segoe UI, Semibold;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #979797;
+}
+.danger {
+  font-family: Segoe UI, Light;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #F89797;
+  opacity: 1;
+}
+.deleteUserPopup {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 1080px;
+  background: #0000008F 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 1;
+  z-index: 1000;
+}
+.deleteUserPopupForm {
+  position: fixed;
+  top: 210px;
+  left: 637px;
+  width: 646px;
+  height: 358px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 30px #00000029;
+  opacity: 1;
+}
+.deleteUserPopupForm h2 {
+  position: fixed;
+  top: 280px;
+  left: 760px;
+  font-size: 36px;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.deleteUserPopupForm .face {
+  position: fixed;
+  top: 369px;
+  left: 709px;
+  width: 24px;
+  height: 24px;
+  background: transparent url('/assets/img/face-24px (1).svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.deleteUserPopupForm .userName {
+  position: fixed;
+  top: 369px;
+  left: 761px;
+  width: 141px;
+  height: 21px;
+  text-align: left;
+  font-size: 16px;
+  font-family: Segoe UI, Light;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.deleteUserPopupForm .status {
+  position: fixed;
+  top: 369px;
+  left: 1093px;
+  width: 85px;
+  height: 21px;
+  text-align: right;
+  font-size: 16px;
+  font-family: Segoe UI, Bold;
+  letter-spacing: 0px;
+  color: #44A0D3;
+  opacity: 1;
+}
+.deleteUserPopupForm .deleteUserBtn {
+  position: fixed;
+  top: 467px;
+  left: 760px;
+  width: 142px;
+  height: 41px;
+  background: transparent url('/assets/img/Group 6.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.deleteUserPopupForm .deleteUserBtn p{
+  position: fixed;
+  top: 477px;
+  left: 789px;
+  width: 84px;
+  height: 21px;
+  text-align: left;
+  font-family: Segoe UI, Semibold;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+.deleteUserPopupForm .closeDeleteUserPopup {
+  position: fixed;
+  top: 232px;
+  left: 1239px;
+  width: 24px;
+  height: 24px;
+  background: transparent url('/assets/img/close-24px (5).svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+main {
+  position: fixed;
+  top: 272px;
+  left: 159px;
+  width: 1602px;
+  z-index: 2;
+}
+table {
+  z-index: 3;
+  position: fixed;
+  top: 272px;
+  left: 159px;
+  width: 1602px;
+}
+table thead {
+  width: 1602px;
+}
+table thead tr {
+  width: 1602px;
+  display: grid;
+  grid-template-columns: 10% 30% 20% 20% 20%;
+}
+table thead tr th {
+  margin-bottom: 31.83px;
+}
+table thead tr .userName {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  width: 100%;
+  text-align: left;
+  font-family: Segoe UI, Semibold;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #000000;
+  text-transform: uppercase;
+  opacity: 1;
+}
+table thead tr .userName span {
+  width: 100%;
+}
+table thead tr .userName span .userNameArrow {
+  width: 13px;
+  height: 7px;
+  background: transparent url('/assets/img/Polygon 1.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+  margin-right: 97%;
+}
+table thead tr .userRole {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  width: 100%;
+  text-align: left;
+  font-family: Segoe UI, Semibold;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #000000;
+  text-transform: uppercase;
+  opacity: 0.37;
+}
+table thead tr .userRole span {
+  width: 100%;
+}
+table thead tr .userRole span .userRoleArrow {
+  width: 13px;
+  height: 7px;
+  background: transparent url('/assets/img/Polygon 4.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+  margin-right: 92%;
+}
+table thead tr .userStatus {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  width: 100%;
+  text-align: left;
+  font-family: Segoe UI, Semibold;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #000000;
+  text-transform: uppercase;
+  opacity: 0.37;
+}
+table thead tr .userStatus span {
+  width: 100%;
+}
+table thead tr .userStatus span .userStatusArrow {
+  width: 13px;
+  height: 7px;
+  background: transparent url('/assets/img/Polygon 5.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+  margin-right: 90%;
+}
+table thead tr .userAction {
+  width: 100%;
+  text-align: left;
+  font-family: Segoe UI, Semibold;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #000000;
+  text-transform: uppercase;
+  opacity: 0.37;
+}
+table tbody tr {
+  width: 1602px;
+  display: grid;
+  grid-template-columns: 10% 30% 20% 20% 20%;
+  background: transparent url('/assets/img/Rectangle 19.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+table tbody tr td {
+  margin-top: 37.3px;
+  margin-bottom: 10px;
+}
+table tbody tr .avatar {
+  width: 46px;
+  height: 46px;
+  background: transparent url('/assets/img/Group 24.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+table tbody tr .userTd {
+  display: grid;
+  grid-template-rows: auto auto;
+  text-align: left;
+  width: 100%;
+}
+table tbody tr .userTd .userName {
+  width: 100%;
+  font-family: Segoe UI, Semibold;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+table tbody tr .userTd .userEmail {
+  width: 100%;
+  font-family: Segoe UI, Light;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 0.37;
+}
+table tbody tr .roleTd {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  text-align: left;
+  width: 100%;
+}
+table tbody tr .roleTd .roleKeyBtn {
+  width: 48px;
+  height: 32px;
+  background: #7E7EF1 0% 0% no-repeat padding-box;
+  border-radius: 30px;
+  opacity: 1;
+}
+table tbody tr .roleTd .roleKeyBtn .roleKey {
+  width: 24px;
+  height: 24px;
+  background: transparent url('/assets/img/vpn_key-24px.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+  margin-top: 3px;
+}
+table tbody tr .roleTd .roleName {
+  width: 100%;
+  text-align: left;
+  font-family: Segoe UI, Semibold;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+table tbody tr .statusTd {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 25% 70%;
+}
+table tbody tr .statusTd .statusToggleBlue {
+  width: 41px;
+  height: 23px;
+  background: transparent url('/assets/img/Component 1 – 1.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+  cursor: pointer;
+}
+table tbody tr .statusTd .statusToggleRed {
+  width: 40px;
+  height: 23px;
+  background: transparent url('/assets/img/Component 1 – 9.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+  cursor: pointer;
+}
+table tbody tr .actionTd {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+table tbody tr .setupBtn {
+  width: 40px;
+  height: 40px;
+  background: transparent url('/assets/img/settings-icon.svg') 0% 0% no-repeat padding-box;
+  /*background-position-x: center;*/
+  background-position-y: center;
+  opacity: 1;
+  border: none;
+}
+table tbody tr .setupBtn:hover {
+  filter: invert(0.4) sepia(1) saturate(20) hue-rotate(162deg) brightness(0.97);
+}
+table tbody tr .deleteBtn {
+  width: 40px;
+  height: 40px;
+  background: transparent url('/assets/img/Path 41.svg') 0% 0% no-repeat padding-box;
+  background-position-x: center;
+  background-position-y: center;
+  opacity: 1;
+  border: none;
+  margin-right: 105%;
+}
+table tbody tr .deleteBtn:hover {
+  filter: invert(0.4) sepia(1) saturate(20) hue-rotate(316.8deg) brightness(0.78);
+}
+table tfoot tr {
+  width: 1602px;
+  display: grid;
+  grid-template-columns: 10% 30% 20% 20% 20%;
+}
+table tfoot tr .pageRecords {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 27% 5% 68%;
+}
+table tfoot tr .pageRecords span {
+  width: 100%;
+}
+table tfoot tr .pageRecords .pageRecordsArrow {
+  width: 13px;
+  height: 7px;
+  background: transparent url('/assets/img/Polygon 6.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+  margin-right: 95%;
+}
+table tfoot tr .active {
+  border: none;
+  width: 32px;
+  height: 32px;
+  letter-spacing: 0px;
+  background: #C6C6C6 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 4px;
+  opacity: 1;
+  font-family: Segoe UI, Bold;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #000000;
+}

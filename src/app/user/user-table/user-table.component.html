@@ -1,0 +1,157 @@
+<header>
+  <div class="headerTitle">
+    <h1>Project Access</h1>
+  </div>
+  <div class="headerSearch">
+    <input type="text" (keyup)="onSearchByFirstName($event)">
+    <div class="magnifyingGlass"></div>
+  </div>
+</header>
+<div class="addUser" (click)="openAddUserPopup()">
+  <div class="addUserBtn">+</div>
+</div>
+
+<div class="addUserPopup" *ngIf="showAddUserForm">
+  <div class="addUserPopupForm">
+    <div class="closeAddUserPopup" (click)="closeAddUserPopup()"></div>
+    <h2 class="addUserPopupTitle">Invite New User</h2>
+    <form [formGroup]="addUserForm" (ngSubmit)="addUser()">
+      <div class="userName">
+
+        <div class="userAvatarRow"></div>
+
+        <div class="userFirstNameRow">
+          <lable>* First Name</lable>
+          <input formControlName="firstName" required>
+          <div class="danger" *ngIf="hasError('firstName', 'required')">First name is required</div>
+          <div class="danger" *ngIf="hasError('firstName', 'minlength')">First name should be at least 6 characters long
+          </div>
+          <div class="danger" *ngIf="hasError('firstName', 'maxlength')">First name shouldn't be more than 50 characters
+            long
+          </div>
+        </div>
+
+        <div class="userLastNameRow">
+          <label>* Last Name</label>
+          <input formControlName="lastName" required>
+          <div class="danger" *ngIf="hasError('lastName', 'required')">Last name is required</div>
+          <div class="danger" *ngIf="hasError('lastName', 'minlength')">Last name should be at least 6 characters long
+          </div>
+          <div class="danger" *ngIf="hasError('lastName', 'maxlength')">Last name shouldn't be more than 50 characters long
+          </div>
+        </div>
+
+      </div>
+
+      <div class="userEmail">
+        <div class="userEmailIconRow"></div>
+        <div class="userEmailRow">
+          <label>* Email</label>
+          <input formControlName="email" required>
+          <div class="danger" *ngIf="hasError('email', 'required')">Email is required</div>
+          <div class="danger" *ngIf="hasError('email', 'email')">Please enter a valid email address</div>
+        </div>
+      </div>
+
+      <div class="userRole">
+        <div class="userRoleIconRow"></div>
+        <div class="userRoleRow">
+          <select formControlName="role" [(ngModel)]="allRoles[0]" required>
+            <option *ngFor="let role of allRoles" [value]="role">{{role}}</option>
+          </select>
+          <div class="danger" *ngIf="hasError('role', 'required')">Role is required</div>
+        </div>
+      </div>
+
+      <button class="addUserPopupFormBtn" type="submit">Send Invitation</button>
+    </form>
+  </div>
+</div>
+
+<div class="deleteUserPopup" *ngIf="showDeleteUserForm">
+  <div class="deleteUserPopupForm">
+    <div class="closeDeleteUserPopup" (click)="closeDeleteUserPopup()"></div>
+    <h2>Delete User</h2>
+    <div class="face"></div>
+    <div class="userName">
+      <span>{{currentUser.firstName}} </span><span>{{currentUser.lastName}}</span>
+    </div>
+    <div class="status">Active User</div>
+    <div class="deleteUserBtn" (click)="deleteUser(currentUser.id)">
+      <p>Delete User</p>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <table>
+    <thead>
+    <tr>
+      <th></th>
+      <th class="userName">
+        <span>User </span><span><div class="userNameArrow"></div></span>
+      </th>
+      <th class="userRole">
+        <span>Role </span><span><div class="userRoleArrow"></div></span>
+      </th>
+      <th class="userStatus">
+        <span>Status </span><span><div class="userStatusArrow"></div></span>
+      </th>
+      <th class="userAction">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users index as i" [attr.data-index]="i">
+      <td class="avatar" *ngIf="i < 5"></td>
+      <td class="userTd" *ngIf="i < 5">
+        <div class="userName">
+          <span>{{ user.firstName }} </span><span>{{ user.lastName }}</span>
+        </div>
+        <div class="userEmail">
+          <span>{{ user.email }}</span>
+        </div>
+      </td>
+      <td class="roleTd" *ngIf="i < 5">
+        <span class="roleKeyBtn" *ngIf="user.role === 'Admin'">
+          <div class="roleKey"></div>
+        </span>
+        <span class="roleName">{{ user.role }} </span>
+      </td>
+      <td class="statusTd" (click)="onStatusToggle(i)" *ngIf="i < 5">
+        <div class="statusToggleRed" *ngIf="showRedStatusToggle"></div>
+        <div class="statusToggleBlue" *ngIf="showBlueStatusToggle"></div>
+        <div></div>
+      </td>
+      <td class="actionTd" *ngIf="i < 5">
+        <button class="setupBtn" (click)="goToUserSetup(user.id)" *ngIf="hideSetupBtn !== i"></button>
+        <div style="width: 40px; height: 40px;" *ngIf="showRedStatusToggle == true && hideSetupBtn===i"></div>
+        <button class="deleteBtn" (click)="openDeleteUserPopup(user.id)"></button>
+      </td>
+    </tr>
+    </tbody>
+    <tfoot>
+      <tr style="margin-top: 40px">
+        <td></td>
+        <td class="pageRecords">
+          <span style="font-family: Segoe UI, Light; font-size: 16px; letter-spacing: 0px; color: #000000; opacity: .7;">
+            Records on page
+          </span>
+          <span style="font-family: Segoe UI, Bold; font-size: 16px; letter-spacing: 0px; color: #000000; opacity: 1;">
+            5
+          </span>
+          <span class="pageRecordsArrow"></span>
+        </td>
+        <td></td>
+        <td></td>
+        <td style="width: 100%">
+          <span style="font-family: Segoe UI, Light; font-size: 16px; letter-spacing: 0px; color: #000000; opacity: .7; margin-right: .4em">Previous</span>
+          <button class="active" style="margin-right: .4em">1</button>
+          <button style="width: 30px; height: 30px; font-family: Segoe UI, Light; font-size: 16px; letter-spacing: 0px; border: none; margin-right: .4em">2</button>
+          <span style="font-family: Segoe UI, Light; font-size: 16px; letter-spacing: 0px; color: #000000; opacity: .7;">Next</span>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
+</main>

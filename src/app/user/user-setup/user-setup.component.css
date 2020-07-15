@@ -1,0 +1,114 @@
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 211px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+}
+header .headerTitle {
+  position: fixed;
+  top: 96px;
+  left: 276px;
+  width: 232px;
+  height: 48px;
+  text-align: left;
+}
+header .headerTitle h1 {
+  font: Semibold 36px/48px Segoe UI;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.setupBtn {
+  position: fixed;
+  top: 175px;
+  left: 159px;
+  width: 72px;
+  height: 72px;
+  background: #C6C6C6 0% 0% no-repeat padding-box;
+  opacity: 1;
+  border-radius: 50%;
+  font: Light 48px/64px Segoe UI;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+.container {
+  position: fixed;
+  top: 211px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.avatar {
+  position: fixed;
+  top: 274px;
+  left: 192px;
+  width: 233px;
+  height: 233px;
+  background: transparent url('/assets/img/Group 2.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.avatar .avatarKeyBtn {
+  position: fixed;
+  top: 432px;
+  left: 348px;
+  width: 77px;
+  height: 51px;
+  background: #7E7EF1 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  border-radius: 30px;
+  opacity: 1;
+}
+.avatar .avatarKeyBtn .avatarKey {
+  position: fixed;
+  top: 446px;
+  left: 375px;
+  width: 24px;
+  height: 24px;
+  background: transparent url('/assets/img/vpn_key-24px.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.text {
+  font-family: Segoe UI, Semibold;
+  font-size: 40px;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #C6C6C6;
+  border-radius: 0;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-align: left;
+  font-family: Segoe UI, Light;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+select {
+  width: 220px;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #C6C6C6;
+  border-radius: 0;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-family: Segoe UI, Regular;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #C6C6C6;
+  opacity: 1;
+}
+.blurred {
+  opacity: .4 !important;
+}

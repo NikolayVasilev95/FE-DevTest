@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "firstName": "Samantha",
+    "lastName": "Standford",
+    "email": "Samantha.standford@testtask.com",
+    "role": "Admin"
+  },
+  {
+    "id": 2,
+    "firstName": "Danniel",
+    "lastName": "Blichman",
+    "email": "danniel.blichman@testtask.com",
+    "role": "Admin"
+  },
+  {
+    "id": 3,
+    "firstName": "Margarette",
+    "lastName": "Jones",
+    "email": "margarette.jones@testtask.com",
+    "role": "User"
+  },
+  {
+    "id": 4,
+    "firstName": "Bethany",
+    "lastName": "Doe",
+    "email": "bethany.doe@testtask.com",
+    "role": "User"
+  },
+  {
+    "id": 5,
+    "firstName": "Samuel",
+    "lastName": "Jackson",
+    "email": "samuel.jackson@testtask.com",
+    "role": "User"
+  },
+  {
+    "id": 6,
+    "firstName": "Persival",
+    "lastName": "Blinn",
+    "email": "persival.blinn@testtask.com",
+    "role": "Admin"
+  }
+]

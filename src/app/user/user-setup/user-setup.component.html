@@ -1,0 +1,319 @@
+<header>
+  <div class="headerTitle">
+    <h1>User Setup</h1>
+  </div>
+</header>
+<div class="setupBtn">
+
+</div>
+<div class="container">
+  <div style="text-align: center">
+    <div class="avatar">
+      <div class="avatarKeyBtn">
+        <div class="avatarKey"></div>
+      </div>
+    </div>
+    <p
+      style="position: fixed; top: 521px; left: 246px; height: 19px; font-family: Segoe UI, Light; font-size: 14px; letter-spacing: 0px; color: #B0ACAC; text-transform: uppercase; opacity: 1;" *ngIf="showBlueStatusToggle">
+      upload a photo
+    </p>
+    <h2 [ngClass]="{'blurred': showRedStatusToggle === true}"
+      style="position: fixed; top: 571px; left: 208px; font-family: Segoe UI, Semibold; font-size: 48px; letter-spacing: 0px; color: #000000; opacity: 1;">
+      {{currentUser.firstName}}
+    </h2>
+    <h2 [ngClass]="{'blurred': showRedStatusToggle === true}"
+      style="position: fixed; top: 630px; left: 208px; font-family: Segoe UI, Semibold; font-size: 48px; letter-spacing: 0px; color: #000000; opacity: 1;">
+      {{currentUser.lastName}}
+    </h2>
+    <p [ngClass]="{'blurred': showRedStatusToggle === true}"
+      style="position: fixed; top: 699px; left: 208px; font-family: Segoe UI, Light; font-size: 16px; letter-spacing: 0px; color: #000000; opacity: 1;">
+      {{currentUser.email}}
+    </p>
+    <button
+      style="position:fixed; top: 776px; left: 204px; width: 209px;height: 59px;background: #7E7EF1 0% 0% no-repeat padding-box;box-shadow: 0px 3px 6px #00000029;border-radius: 100px;opacity: 1; border: none" *ngIf="showBlueStatusToggle">
+      Resend the invite
+    </button>
+  </div>
+  <div>
+    <h2
+      style="position:fixed; top: 282px; left: 708px; width: 111px; height: 48px; text-align: left; font-family: Segoe UI, Semibold; font-size: 36px; letter-spacing: 0px; color: #000000; opacity: 1;">
+      Details
+    </h2>
+    <p style="position:fixed; top: 386px; left: 642px;" (click)="onStatusToggle()">
+      <img style="cursor: pointer" class="toggle" src="/assets/img/Component 1 – 26.svg" alt="blue-toggle" *ngIf="showBlueStatusToggle">
+      <img style="cursor: pointer" class="toggle" src="/assets/img/Component 1 – 9.svg" alt="red-toggle" *ngIf="showRedStatusToggle">
+      <span style="color: #B0ACAC; margin-left: .6em">  The user is <span style="color: #000000; font-weight: bold">
+        {{ showBlueStatusToggle ? status[0] : status[1] }}</span></span>
+    </p>
+    <form [formGroup]="changeUserForm" (ngSubmit)="changeUser()" [ngClass]="{'blurred': showRedStatusToggle === true}">
+      <div style="position: fixed; top: 475px; left: 695px;">
+        <lable style="position:fixed; top: 451px; left: 695px; font-family: Segoe UI, Semibold; font-size: 12px;
+letter-spacing: 0px;
+color: #33A3DC;
+opacity: 1;">* First Name</lable>
+        <input formControlName="firstName" [ngModel]="currentUser.firstName" required>
+        <div *ngIf="hasError('firstName', 'required')">First name is required</div>
+        <div *ngIf="hasError('firstName', 'minlength')">First name should be at least 6 characters long
+        </div>
+        <div *ngIf="hasError('firstName', 'maxlength')">First name shouldn't be more than 50 characters
+          long
+        </div>
+      </div>
+
+      <div style="position: fixed; top: 549px; left: 695px;">
+        <label style="position:fixed; top: 525px; left: 695px; font-family: Segoe UI, Semibold; font-size: 12px;
+letter-spacing: 0px;
+color: #33A3DC;
+opacity: 1;">* Last Name</label>
+        <input formControlName="lastName" [ngModel]="currentUser.lastName" required>
+        <div *ngIf="hasError('lastName', 'required')">Last name is required</div>
+        <div *ngIf="hasError('lastName', 'minlength')">Last name should be at least 6 characters long
+        </div>
+        <div *ngIf="hasError('lastName', 'maxlength')">Last name shouldn't be more than 50 characters long
+        </div>
+      </div>
+
+      <div style="position: fixed; top: 623px; left: 695px;">
+        <label style="position:fixed; top: 599px; left: 695px; font-family: Segoe UI, Semibold; font-size: 12px;
+letter-spacing: 0px;
+color: #33A3DC;
+opacity: 1;">* Role</label>
+        <select formControlName="role" [ngModel]="currentUser.role" required>
+          <option *ngFor="let role of allRoles" [value]="role">{{role}}</option>
+        </select>
+        <div *ngIf="hasError('role', 'required')">Role is required</div>
+      </div>
+
+      <button
+        style="position:fixed; top: 776px; left: 708px; width: 209px; height: 59px; background: #44A0D3 0% 0% no-repeat padding-box; box-shadow: 0px 3px 6px #00000029; border-radius: 100px; opacity: 1; border: none"
+        type="submit" *ngIf="showBlueStatusToggle">Save Changes
+      </button>
+    </form>
+  </div>
+  <div>
+    <h2 style="position:fixed; top: 282px;
+left: 1269px;
+width: 192px;
+height: 48px;
+text-align: left;
+font-family: Segoe UI, Semibold;
+font-size: 36px;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;">Permissions</h2>
+    <p [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 384px;
+left: 1270px;
+width: 98px;
+height: 21px;
+text-align: left;
+font-family: Segoe UI, Bold;
+font-size: 16px;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;">Super Admin</p>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 432px;
+left: 1269px;
+width: 593px;
+height: 0.87469482421875px;
+background: transparent url('/assets/img/Rectangle 22.svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 451px;
+left: 1234px;
+width: 24px;
+height: 24px;
+background: transparent url('/assets/img/keyboard_arrow_down-24px (2).svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <p [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 452px;
+left: 1270px;
+width: 138px;
+height: 21px;
+text-align: left;
+font-family: Segoe UI, Semibold;
+font-size: 16px;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;">Permission group 1</p>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 524px; border-radius: 50%;
+left: 1287px;
+width: 6px;
+height: 6px;
+background: #44A0D3 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <p [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 516px;
+left: 1305px;
+height: 21px;
+text-align: left;
+font-family: Segoe UI, Semibold;
+font-size: 16px;
+letter-spacing: 0px;">Permission 11</p>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 557px;
+left: 1287px;
+width: 6px;
+height: 6px;
+background: #44A0D3 0% 0% no-repeat padding-box;
+opacity: 1; border-radius: 50%;"></div>
+    <p [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 548px;
+left: 1305px;
+width: 98px;
+height: 21px;
+text-align: left;
+font-family: Segoe UI, Semibold;
+font-size: 16px;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;">Permission 12</p>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 588px;
+left: 1287px;
+width: 6px;
+height: 6px;
+background: #FF0000 0% 0% no-repeat padding-box;
+opacity: 1; border-radius: 50%;"></div>
+    <p [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 580px;
+left: 1305px;
+height: 21px;
+text-align: left;
+font-family: Segoe UI, Light;
+font-size: 16px;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;">Permission 13</p>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 620px;
+left: 1287px;
+width: 6px;
+height: 6px;
+background: #44A0D3 0% 0% no-repeat padding-box;
+opacity: 1; border-radius: 50%;"></div>
+    <p [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 612px;
+left: 1305px;
+width: 99px;
+height: 21px;
+text-align: left;
+font-family: Segoe UI, Semibold;
+font-size: 16px;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;">Permission 14</p>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 653px;
+left: 1287px;
+width: 6px;
+height: 6px;
+background: #44A0D3 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <p [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 644px;
+left: 1305px;
+width: 98px;
+height: 21px;
+text-align: left;
+font-family: Segoe UI, Semibold;
+font-size: 16px;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;">Permission 15</p>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 717px;
+left: 1234px;
+width: 24px;
+height: 24px;
+background: transparent url('/assets/img/keyboard_arrow_down-24px (2).svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 691px;
+left: 1269px;
+width: 593px;
+height: 0.87469482421875px;
+background: transparent url('/assets/img/Rectangle 22.svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <h2 [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 718px;
+left: 1270px;
+height: 21px;
+text-align: left;
+font-family: Segoe UI, Semibold;
+font-size: 16px;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;">Permission group 2</h2>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 763px;
+left: 1269px;
+width: 593px;
+height: 0.87469482421875px;
+background: transparent url('/assets/img/Rectangle 22.svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 789px;
+left: 1234px;
+width: 24px;
+height: 24px;
+background: transparent url('/assets/img/keyboard_arrow_down-24px (2).svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <h2 [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 790px; left: 1270px;
+height: 21px;
+text-align: left;
+font-family: Segoe UI, Semibold;
+font-size: 16px;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;">Permission group 3</h2>
+    <p [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 306px;
+left: 1799px;
+width: 44px;
+height: 21px;
+text-align: left;
+font-family: Segoe UI, Light;
+font-size: 16px;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;">{{currentUser.role}}</p>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 384px;
+left: 1803px;
+width: 40px;
+height: 23px;
+background: transparent url('assets/img/Component 1 – 9.svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 451px;
+left: 1803px;
+width: 40px;
+height: 23px;
+background: transparent url('assets/img/Component 1 – 9.svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 516px;
+left: 1805px;
+width: 41px;
+height: 23px;
+background: transparent url('/assets/img/Component 1 – 1.svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position:fixed; top: 548px;
+left: 1805px;
+width: 41px;
+height: 23px;
+background: transparent url('/assets/img/Component 1 – 1.svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position: fixed; top: 580px;
+left: 1803px;
+width: 40px;
+height: 23px;
+background: transparent url('assets/img/Component 1 – 9.svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position: fixed; top: 612px;
+left: 1805px;
+width: 41px;
+height: 23px;
+background: transparent url('/assets/img/Component 1 – 1.svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position: fixed; top: 644px;
+left: 1805px;
+width: 41px;
+height: 23px;
+background: transparent url('/assets/img/Component 1 – 1.svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position: fixed; top: 717px;
+left: 1803px;
+width: 40px;
+height: 23px;
+background: transparent url('assets/img/Component 1 – 9.svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+    <div [ngClass]="{'blurred': showRedStatusToggle === true}" style="position: fixed; top: 789px;
+left: 1803px;
+width: 40px;
+height: 23px;
+background: transparent url('assets/img/Component 1 – 9.svg') 0% 0% no-repeat padding-box;
+opacity: 1;"></div>
+  </div>
+
+</div>
